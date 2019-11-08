@@ -1,0 +1,91 @@
+#:import Home telas.home_tela.Home
+#:import BoxLayout kivy.uix.boxlayout.BoxLayout
+#:import Label kivy.uix.label.Label
+#:import TextInput kivy.uix.textinput.TextInput
+#:import Button kivy.uix.button.Button
+#:kivy 1.11
+
+
+<Gerenciamento>:
+    Home:
+        name: "home"
+
+<Home>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: "10dp"
+
+        canvas:
+            Color:
+                rgba: (0,.3,0,1)
+
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                
+
+        Label:
+            size_hint_y: None
+            height: '40dp'
+            text: "Digite o caminho da imagem."
+            font_size: "20sp"
+
+        TextInput:
+            id: img
+            hint_text: "C:\\Users\\user\\Desktop\\Pictures\\image.png"
+            size_hint_y: None
+            height: '60dp'
+            multiline: False
+
+
+        Label:
+            size_hint_y: None
+            height: '40dp'
+            text: "Digite para quais contatos deseja enviar as mensagens."
+            font_size: "20sp"
+
+
+        TextInput:
+            id: contatos
+            hint_text: "Junior, Marcos, Alex, Pedro, +55 11 123456789"
+            font_size: "20sp"
+
+
+        Label:
+            size_hint_y: None
+            height: '40dp'
+            text: "Digite a mensagem que deseja enviar."
+            font_size: "20sp"
+
+
+        TextInput:
+            id: mensagem
+            hint_text: "Digite aqui..."
+            font_size: "20sp"
+
+        BoxLayout:
+            padding: "5dp"
+            size_hint_y: None
+            height: '90dp'
+            
+            Button:
+                text: "Enviar"
+                font_size: "15sp"
+                on_release: root.Enviar()
+
+            BoxLayout:
+                orientation: "vertical"
+
+                Button:
+                    id: perfilWb
+                    text: "Apagar Perfil - Whatsapp"
+                    font_size: "15sp"
+                    on_release: root.apagarPerf()
+
+                Button:
+                    id: salvardados
+                    text: "Salvar dados - Contatos e Mensagem"
+                    font_size: "15sp"
+                    on_release: root.salvarDados()
+
+
