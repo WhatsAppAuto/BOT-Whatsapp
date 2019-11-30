@@ -70,7 +70,7 @@ class BOT:
         def enviarImage(self, imagem):
 
                 try:
-                        x,y = locateCenterOnScreen(imagem)
+                        x,y = locateCenterOnScreen('images\image1.png')
                         click(x,y)
                         sleep(2)
                         click(x,y+80)
